@@ -1,0 +1,39 @@
+
+<div>
+    <ul>
+        <li appHighLightLI *ngFor= "let rabbi of rabbiArr">{{rabbi.name}}  {{rabbi.lastName}}</li>
+    </ul>
+
+</div>
+
+<button 
+    appShow 
+    clickCounterColor= "red"
+    (clickCountChange)="logsArr.push($event)"
+    >Click</button>
+
+<button 
+    appShow 
+    clickCounterColor= "green"
+    (clickCountChange)="logsArr.push($event)"
+
+    >Click 2</button>
+
+<button 
+    appShow 
+    clickCounterColor= "gray"
+    (clickCountChange)="logsArr.push($event)"
+
+    >Click 3</button>
+
+<button 
+    appShow 
+    [clickCounterColor]='colorParmeter1'
+    (clickCountChange)="logsArr.push($event)"
+
+    >Click 4</button>
+<ul>
+    <li *ngFor="let list of logsArr">{{list}}</li>
+</ul>
+
+<app-rabbi-details></app-rabbi-details>
